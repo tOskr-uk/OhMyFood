@@ -4,10 +4,10 @@ $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
 $color-grey-lighter: #eeeeee;
-$color-grey-light: #e4e4e4;
+$color-grey-light: #cecece;
 $color-grey: #aaa;
 $color-grey-dark: #666;
-$color-grey-darker: #444;
+$color-grey-darker: #333;
 
 $font-logo: 'Shrikhand', cursive;
 $font-text: 'Roboto', sans-serif;
@@ -15,7 +15,7 @@ $font-text: 'Roboto', sans-serif;
 
 
 // MIXINS
-@mixin box-shadow($x:2px, $y:2px, $blur:5px, $spread:2px, $color:$color-grey){
+@mixin box-shadow($x:2px, $y:2px, $blur:5px, $spread:2px, $color:$color-grey-light){
     box-shadow: $x $y $blur $spread $color;
 }
 

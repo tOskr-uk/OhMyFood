@@ -1,0 +1,94 @@
+.section-location {
+    background-color: $color-grey-light;
+    @include flex-center;
+    flex-flow: row nowrap;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: -1;
+    color: $color-grey-darker;
+
+    i {
+        margin-right: 1.5rem;
+    }
+}
+
+.section-book {   
+    background-color: $color-grey-lighter;
+    @include box-shadow($y:3px, $color:$color-grey);
+    @include flex-center;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 3rem;
+    }
+
+    p {
+        color: $color-grey-dark;
+        margin-bottom: 3rem;
+    }
+}
+
+.section-how-it-works {
+    background-color: white;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            &:nth-child(1) a::before{content: '1';}
+            &:nth-child(2) a::before{content: '2';}
+            &:nth-child(3) a::before{content: '3';}
+            
+            a {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+
+                position: relative;
+                height: 6rem;
+                margin-top: 2rem;
+                padding-left: 2.5rem;
+                border-radius: 20px;
+                background-color: $color-grey-lighter;
+                text-decoration: none;
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: black;
+                @include box-shadow($x:0);
+
+                i {
+                    padding-right: 1.5rem;
+                    color: $color-grey-dark;
+                }
+
+            
+                &::before {
+                    background-color: $color-primary;
+                    position: absolute;
+                    top: 1.6rem;
+                    left: -1.5rem;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    border-radius: 50%;
+                    color: $color-grey-lighter;
+                    text-align: center;
+                    font-size: 1.4rem;
+                    line-height: 2.5rem;
+                }
+            }       
+        }
+    }
+
+    .li--active a {
+        background-color: rgba($color: $color-primary, $alpha: 0.15);
+
+        i {
+            color: $color-primary;
+        }
+    }
+}
+
+.section-restaurants {
+    background-color: $color-grey-lighter;
+}
