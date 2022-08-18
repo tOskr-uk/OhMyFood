@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem 2rem;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 0 2px 5px 2px #aaa;
+}
+
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.home .heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 1rem 0;
+  box-shadow: 0 2px 5px 2px #aaa;
+}
+.home .location {
+  background-color: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: -1;
+  color: #444;
+}
+.home .location i {
+  margin-right: 1.5rem;
+}
+.home .hero {
+  background-color: #eeeeee;
+  box-shadow: 2px 3px 5px 2px #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  padding: 3rem;
+  text-align: center;
+}
+.home .hero h1 {
+  margin-bottom: 3rem;
+}
+.home .hero p {
+  color: #666;
+  margin-bottom: 3rem;
+}
+.home .navigation {
+  background-color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

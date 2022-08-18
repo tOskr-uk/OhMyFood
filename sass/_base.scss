@@ -1,8 +1,3 @@
-// VARIABLES
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-
 // RESETS
 *,
 *::before,
@@ -12,15 +7,21 @@ $color-tertiary: #99E2D0;
     padding: 0;
 }
 
+
+
+// TYPOGRAPHY
 html {
     font-size: 62.5%;
+    font-family: $font-text;
 }
 
 body {
     font-size: 1.6rem;
 }
 
+h1 {
+    font-weight: 900;
+}
 
-// Fonts
-// Logo and Titles: Shrikhand
-// Text: Roboto
+
+
