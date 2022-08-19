@@ -10,8 +10,8 @@
 
     &:hover {
         filter: brightness(1.1);
-        @include box-shadow($x:0, $y:4px, $color:$color-grey-dark);
-
+        transform: translateY(-3px);
+        @include box-shadow($x:0, $y:4px, $blur:8px, $spread:1px, $color:$color-grey-dark);
     }
 }
 
@@ -71,16 +71,32 @@
             font-size: 1.7rem;
         }
 
-        a {
-            display: block;
+        div {
             text-decoration: none;
             position: absolute;
             top: 1.8rem;
             right: 2rem;
             z-index: 5;
 
-            &:target i:last-child {
-                opacity: 1;
+            input[type=checkbox] {
+                position: absolute;
+                visibility: hidden;
+                top: -1000px;
+                left: -1000px;
+                
+                &:checked ~ i:last-child {
+                    opacity: 1;
+                }
+            }
+
+            label {
+                position: absolute;
+                height: calc(100% + 10px);
+                width: calc(100% + 10px);
+                top: -5px;
+                left: -5px;
+                z-index: 10;
+                cursor: pointer;
             }
 
             i { 
@@ -92,6 +108,7 @@
                     top: 0;
                     left: 0;
                     opacity: 0;
+                    transition: all 0.5s;
                 }
             }
         }
@@ -110,9 +127,6 @@
         line-height: 25px;
         font-size: 1.2rem;
         background-color: $color-tertiary;
-        border-radius: 2px;   
+        border-radius: 2px;
     }
-
-    
-    
 }

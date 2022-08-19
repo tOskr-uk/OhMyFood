@@ -30,7 +30,8 @@ h1 {
 }
 .btn:hover {
   filter: brightness(1.1);
-  box-shadow: 0 4px 5px 2px #666;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px 1px #666;
 }
 
 .card {
@@ -77,26 +78,41 @@ h1 {
   margin-bottom: 0.5rem;
   font-size: 1.7rem;
 }
-.card__info a {
-  display: block;
+.card__info div {
   text-decoration: none;
   position: absolute;
   top: 1.8rem;
   right: 2rem;
   z-index: 5;
 }
-.card__info a:target i:last-child {
+.card__info div input[type=checkbox] {
+  position: absolute;
+  visibility: hidden;
+  top: -1000px;
+  left: -1000px;
+}
+.card__info div input[type=checkbox]:checked ~ i:last-child {
   opacity: 1;
 }
-.card__info a i {
+.card__info div label {
+  position: absolute;
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  z-index: 10;
+  cursor: pointer;
+}
+.card__info div i {
   font-size: 2.2rem;
   color: #9356DC;
 }
-.card__info a i:last-child {
+.card__info div i:last-child {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
+  transition: all 0.5s;
 }
 .card--new .card__anchor::before {
   position: absolute;
