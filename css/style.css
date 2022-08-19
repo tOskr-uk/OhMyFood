@@ -25,7 +25,92 @@ h1 {
   padding: 1.5rem 2rem;
   border-radius: 50px;
   background-image: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 0 2px 5px 2px #cecece;
+  box-shadow: 0 2px 5px 2px #aaa;
+  transition: all 0.2s;
+}
+.btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 5px 2px #666;
+}
+
+.card {
+  position: relative;
+  height: 23rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px #cecece;
+  overflow: hidden;
+}
+.card:not(:last-child) {
+  margin: 2rem 0;
+}
+.card:nth-of-type(2) img {
+  object-position: 0 -140px;
+}
+.card__anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.card__image {
+  height: 70%;
+}
+.card__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  overflow: hidden;
+}
+.card__info {
+  height: 30%;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.card__info h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.7rem;
+}
+.card__info a {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  z-index: 5;
+}
+.card__info a:target i:last-child {
+  opacity: 1;
+}
+.card__info a i {
+  font-size: 2.2rem;
+  color: #9356DC;
+}
+.card__info a i:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.card--new .card__anchor::before {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 25px;
+  width: 70px;
+  content: "New";
+  color: #1b6150;
+  text-align: center;
+  line-height: 25px;
+  font-size: 1.2rem;
+  background-color: #99E2D0;
+  border-radius: 2px;
 }
 
 .header {

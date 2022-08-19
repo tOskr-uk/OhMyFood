@@ -1,17 +1,118 @@
+// BUTTONS
 .btn {
     color: white;
     text-decoration: none;
     padding: 1.5rem 2rem;
     border-radius: 50px;
-    // margin-bottom: 2rem;
     background-image: linear-gradient($color-secondary, $color-primary);
-    @include box-shadow($x:0);
+    @include box-shadow($x:0, $color:$color-grey);
+    transition: all 0.2s;
+
+    &:hover {
+        filter: brightness(1.1);
+        @include box-shadow($x:0, $y:4px, $color:$color-grey-dark);
+
+    }
 }
 
 
+// CARDS
 .card {
-
-    &--new {
-
+    position: relative;
+    height: 23rem;
+    border-radius: 10px;
+    @include box-shadow;
+    overflow: hidden;
+    
+    &:not(:last-child){
+        margin: 2rem 0;
     }
+
+    &:nth-of-type(2) img {
+        object-position: 0 -140px;
+    }
+
+    &__anchor {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__image {
+        height: 70%;
+        
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            
+            object-position: bottom;
+            overflow: hidden;
+        }
+    }
+
+    &__info {
+        height: 30%;
+        background-color: white;
+        // font-size: 70%;
+        position: relative;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        padding: 0 1rem;
+
+        
+        h2 {
+            margin-bottom: .5rem;
+            font-size: 1.7rem;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            position: absolute;
+            top: 1.8rem;
+            right: 2rem;
+            z-index: 5;
+
+            &:target i:last-child {
+                opacity: 1;
+            }
+
+            i { 
+                font-size: 2.2rem;
+                color: $color-primary;
+                
+                &:last-child {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &--new &__anchor::before {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 25px;
+        width: 70px;
+        
+        content: 'New';
+        color: darken($color-tertiary, 50%);
+        text-align: center;
+        line-height: 25px;
+        font-size: 1.2rem;
+        background-color: $color-tertiary;
+        border-radius: 2px;   
+    }
+
+    
+    
 }
