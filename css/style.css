@@ -20,6 +20,7 @@ h1 {
 }
 
 .btn {
+  display: inline-block;
   color: white;
   text-decoration: none;
   padding: 1.5rem 2rem;
@@ -29,8 +30,8 @@ h1 {
   transition: all 0.2s;
 }
 .btn:hover {
-  filter: brightness(1.1);
-  transform: translateY(-3px);
+  filter: brightness(1.08);
+  transform: translateY(-2px);
   box-shadow: 0 4px 8px 1px #666;
 }
 
@@ -40,6 +41,13 @@ h1 {
   border-radius: 10px;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
+  transition: all 0.2s;
+}
+@media screen and (min-width: 1200px) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 3px 5px 2px #aaa;
+  }
 }
 .card:not(:last-child) {
   margin: 2rem 0;
@@ -130,13 +138,24 @@ h1 {
 }
 
 .header {
-  display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 0 1rem 0;
   box-shadow: 0 2px 5px 2px #aaa;
+  position: relative;
+}
+.header a {
+  position: absolute;
+  left: 0;
+  bottom: 1rem;
+}
+.header a i {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #333;
 }
 
 .section {
@@ -164,6 +183,74 @@ h1 {
 .footer a i {
   font-size: 1.3rem;
   width: 2.5rem;
+}
+
+.restaurant__background img {
+  width: 100%;
+}
+.restaurant__body {
+  background-color: #eeeeee;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  transform: translateY(-5rem);
+  margin-bottom: -60px;
+  padding: 2rem 1rem 8rem 1rem;
+}
+.restaurant__body .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 2rem 2rem 0;
+}
+.restaurant__body .name h1 {
+  font-family: Shrikhand, sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+.restaurant__body .name i {
+  font-size: 3rem;
+  color: #666;
+}
+.restaurant__body .menu .group {
+  padding: 2rem 0 1rem 0;
+}
+.restaurant__body .menu .group__title {
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 200;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.restaurant__body .menu .group__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #99E2D0;
+  width: 4.5rem;
+}
+.restaurant__body .menu .group__card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #333;
+  position: relative;
+  box-shadow: 2px 2px 5px 2px #cecece;
+}
+.restaurant__body .menu .group__card h3:last-child {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+.restaurant__body .btn {
+  margin-top: 4rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .section-location {
@@ -203,6 +290,7 @@ h1 {
 }
 .section-how-it-works ul {
   list-style-type: none;
+  margin-left: 1rem;
 }
 .section-how-it-works ul li:nth-child(1) a::before {
   content: "1";

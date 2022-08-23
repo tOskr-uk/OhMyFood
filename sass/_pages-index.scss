@@ -34,6 +34,7 @@
 
     ul {
         list-style-type: none;
+        margin-left: 1rem;
 
         li {
             &:nth-child(1) a::before{content: '1';}

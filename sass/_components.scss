@@ -1,5 +1,6 @@
 // BUTTONS
 .btn {
+    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 1.5rem 2rem;
@@ -9,8 +10,8 @@
     transition: all 0.2s;
 
     &:hover {
-        filter: brightness(1.1);
-        transform: translateY(-3px);
+        filter: brightness(1.08);
+        transform: translateY(-2px);
         @include box-shadow($x:0, $y:4px, $blur:8px, $spread:1px, $color:$color-grey-dark);
     }
 }
@@ -23,6 +24,16 @@
     border-radius: 10px;
     @include box-shadow;
     overflow: hidden;
+    transition: all 0.2s;
+
+    &:hover {
+        @include breakpoint-desktop {
+            transform: translateY(-2px);
+            @include box-shadow($y: 3px, $color: $color-grey);
+        }
+    }
+    
+        
     
     &:not(:last-child){
         margin: 2rem 0;
@@ -39,6 +50,7 @@
         height: 100%;
         width: 100%;
         z-index: 1;
+
     }
 
     &__image {

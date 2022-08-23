@@ -1,10 +1,23 @@
 .header {
-    display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     @include flex-center;
     padding: 2rem 0 1rem 0;
-    // box-shadow: 0 1px 5px 2px $color-grey;
     @include box-shadow($x:0, $color:$color-grey);
+    position: relative;
+
+    a {
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
+
+
+        i {
+            padding: 1rem;
+            margin-bottom: .5rem;
+            font-size: 2rem;
+            color: $color-grey-darker;
+        }
+    }
 }
 
 .section {
@@ -36,6 +49,92 @@
         i {
             font-size: 1.3rem;
             width: 2.5rem;
+        }
+    }
+}
+
+.restaurant {
+    &__background {
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__body {
+        background-color: $color-grey-lighter;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        transform: translateY(-5rem);
+        margin-bottom: -60px;
+        padding: 2rem 1rem 8rem 1rem;
+
+
+        .name {
+            display: flex;
+            justify-content: space-between;            
+            align-items: center;
+            padding: 2.5rem 2rem 2rem 0;
+
+            h1 {
+                font-family: Shrikhand, sans-serif;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+            }
+        
+            i {
+                font-size: 3rem;
+                color: $color-grey-dark
+            }
+        }   
+        
+        .menu {
+            .group {
+                padding: 2rem 0 1rem 0;
+
+                &__title {
+                    text-transform: uppercase;
+                    color: $color-grey-dark;
+                    font-weight: 200;
+                    position: relative;
+                    padding-bottom: .5rem;
+                    margin-bottom: 1.5rem;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        border-bottom: 3px solid $color-tertiary;
+                        width: 4.5rem;
+                    }
+                }
+
+                &__card {
+                    background-color: #fff;
+                    border-radius: 15px;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    color: $color-grey-darker;
+                    position: relative;
+                    @include box-shadow;
+
+
+                    h3:last-child {
+                        position: absolute;
+                        bottom: 1rem;
+                        right: 2rem;
+                    }
+                }
+            }  
+        } 
+
+        .btn {
+            margin-top: 4rem;
+            padding-left: 8rem;
+            padding-right: 8rem;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
         }
     }
 }
