@@ -231,68 +231,67 @@ h1 {
   width: 4.5rem;
 }
 .restaurant__body .menu .group__card {
-  display: block;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   text-decoration: none;
   background-color: #fff;
   border-radius: 15px;
-  padding: 1rem;
   margin: 1.5rem 0;
   color: #666;
-  position: relative;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
 }
-.restaurant__body .menu .group__card p {
+.restaurant__body .menu .group__card div:first-of-type {
+  position: relative;
+  padding: 1rem;
+  flex: 1 0;
+  min-width: 0;
+  margin-right: 1rem;
+}
+.restaurant__body .menu .group__card div:first-of-type p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
   margin-right: 5rem;
   margin-top: 0.5rem;
-  transition: all 0.2s;
 }
-.restaurant__body .menu .group__card i {
-  display: flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: #99E2D0;
-  color: white;
-  font-size: 1.4rem;
-  text-align: center;
-  visibility: hidden;
-  transition: all 0.2s;
-}
-.restaurant__body .menu .group__card i::before {
-  position: absolute;
-  height: 2rem;
-  width: 2rem;
-  padding-top: 0.3rem;
-  border-radius: 50%;
-  background-color: white;
-}
-.restaurant__body .menu .group__card h3:last-of-type {
+.restaurant__body .menu .group__card div:first-of-type h3:last-of-type {
   position: absolute;
   bottom: 1rem;
-  right: 2rem;
+  right: 0;
   font-size: 1.5rem;
+}
+.restaurant__body .menu .group__card div:last-of-type {
+  position: relative;
+  flex: 0 0;
+  flex-basis: 0;
+  background-color: #99E2D0;
+  margin-left: 0;
+  width: 0;
   transition: all 0.2s;
 }
-.restaurant__body .menu .group__card:hover i, .restaurant__body .menu .group__card:active i {
-  visibility: visible;
-  width: 6rem;
+.restaurant__body .menu .group__card div:last-of-type i {
+  visibility: hidden;
   color: #99E2D0;
+  background-color: white;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 50%;
+  transition: all 0.2s;
 }
-.restaurant__body .menu .group__card:hover p, .restaurant__body .menu .group__card:active p {
-  margin-right: 11rem;
+.restaurant__body .menu .group__card:hover div:last-of-type, .restaurant__body .menu .group__card:visited div:last-of-type {
+  flex-basis: 6rem;
 }
-.restaurant__body .menu .group__card:hover h3:last-of-type, .restaurant__body .menu .group__card:active h3:last-of-type {
-  margin-right: 6rem;
+.restaurant__body .menu .group__card:hover div:last-of-type i, .restaurant__body .menu .group__card:visited div:last-of-type i {
+  visibility: visible;
+  transform: translate(-50%, -50%);
 }
 .restaurant__body .btn {
   margin-top: 4rem;

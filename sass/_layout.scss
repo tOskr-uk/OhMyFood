@@ -110,79 +110,113 @@
                 }
 
                 &__card {
-                    display: block;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    
                     text-decoration: none;
                     background-color: #fff;
                     border-radius: 15px;
-                    padding: 1rem;
                     margin: 1.5rem 0;
                     color: $color-grey-dark;
-                    position: relative;
                     @include box-shadow;
                     overflow: hidden;
                     
-                    p {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        
-                        display: block;
-                        margin-right: 5rem;
-                        margin-top: .5rem;
+                    div:first-of-type {
+                        position: relative;
+                        padding: 1rem;
+                        flex: 1 0;
+                        min-width: 0;
+                        margin-right: 1rem;
 
-                        transition: all 0.2s;
-                    }
+                        p {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            
+                            display: block;
+                            margin-right: 5rem;
+                            margin-top: .5rem;
+                        }
 
-                    i {
-                        display: flex;
-                        @include flex-center;
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        width: 0;
-                        height: 100%;
-                        background-color: $color-tertiary;
-                        color: white;
-                        font-size: 1.4rem;
-                        text-align: center;
-                        visibility: hidden;
-                        transition: all 0.2s;
-                        
-                        &::before {
+                        h3:last-of-type {
                             position: absolute;
-                            height: 2rem;
-                            width: 2rem;
-                            padding-top: .3rem;
-                            border-radius: 50%;
-                            background-color: white;
+                            bottom: 1rem;
+                            right: 0;
+                            font-size: 1.5rem;
                         }
                     }
 
-                    h3:last-of-type {
-                        position: absolute;
-                        bottom: 1rem;
-                        right: 2rem;
-                        font-size: 1.5rem;
+                    div:last-of-type {
+                        position: relative;
+                        flex: 0 0;
+                        flex-basis: 0;
+                        background-color: $color-tertiary;
+                        margin-left: 0;
+                        width: 0;
                         transition: all 0.2s;
+                        
+                        i {
+                            visibility: hidden;
+                            color: $color-tertiary;
+                            background-color: white;
+                            height: 2.5rem;
+                            width: 2.5rem;
+                            padding: .5rem;
+                            border-radius: 50%;
+                            
+                            position: absolute;
+                            transform: translate(0, -50%);
+                            top: 50%;
+                            left: 50%;
+                            
+                            transition: all 0.2s;
+                        }
                     }
                     
-                    &:hover i,
-                    &:active i {
-                        visibility: visible;
-                        width: 6rem;
-                        color: $color-tertiary; 
+                    &:hover,
+                    &:visited {
+                        div:last-of-type{
+                            flex-basis: 6rem;
+                            
+                            i {
+                                visibility: visible;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+
+
                     }
 
-                    &:hover p,
-                    &:active p {
-                        margin-right: 11rem;
-                    }
+                    // i {
+                    //     color: white;
+                    //     font-size: 1.4rem;
+                    //     text-align: center;
+                    //     visibility: hidden;
+                    //     transition: all 0.2s;
+                        
+                    //     &::before {
+                    //         position: absolute;
+                    //         height: 2rem;
+                    //         width: 2rem;
+                    //         padding-top: .3rem;
+                    //         border-radius: 50%;
+                    //         background-color: white;
+                    //     }
+                    // }
 
-                    &:hover h3:last-of-type,
-                    &:active h3:last-of-type {
-                        margin-right: 6rem;
-                    }
+                    
+                    
 
+                    // &:hover p,
+                    // &:active p {
+                    //     margin-right: 11rem;
+                    // }
+
+                    // &:hover h3:last-of-type,
+                    // &:active h3:last-of-type {
+                    //     margin-right: 6rem;
+                    // }
                 }
             }  
         } 
