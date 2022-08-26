@@ -88,8 +88,11 @@
         }   
         
         .menu {
+            
+
             .group {
                 padding: 2rem 0 1rem 0;
+
 
                 &__title {
                     text-transform: uppercase;
@@ -121,6 +124,9 @@
                     color: $color-grey-dark;
                     @include box-shadow;
                     overflow: hidden;
+                    visibility: hidden;
+
+                    
                     
                     div:first-of-type {
                         position: relative;
@@ -186,36 +192,6 @@
 
 
                     }
-
-                    // i {
-                    //     color: white;
-                    //     font-size: 1.4rem;
-                    //     text-align: center;
-                    //     visibility: hidden;
-                    //     transition: all 0.2s;
-                        
-                    //     &::before {
-                    //         position: absolute;
-                    //         height: 2rem;
-                    //         width: 2rem;
-                    //         padding-top: .3rem;
-                    //         border-radius: 50%;
-                    //         background-color: white;
-                    //     }
-                    // }
-
-                    
-                    
-
-                    // &:hover p,
-                    // &:active p {
-                    //     margin-right: 11rem;
-                    // }
-
-                    // &:hover h3:last-of-type,
-                    // &:active h3:last-of-type {
-                    //     margin-right: 6rem;
-                    // }
                 }
             }  
         } 

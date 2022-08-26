@@ -45,3 +45,29 @@ $breakpoints:(
     tablet: 992px,
     mobile: 768px
 );
+
+
+
+// ANIMATIONS
+// -------------
+
+@for $i from 1 through 9 {
+    .group__card:nth-of-type(#{$i}){
+        // @include animate(calc($i * 500));
+        animation: build-arrest 1s linear $i+0s forwards !important;
+    }
+}
+
+
+
+
+@mixin animate($delay) {
+    // name, duration, timing function, delay, iteration count, direction
+    animation: build-arrest 1s linear #{$delay}ms 1 forwards;
+}
+
+
+@keyframes build-arrest {
+    from {visibility: hidden;}
+    to {visibility: visible;}
+}

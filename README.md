@@ -15,7 +15,7 @@ QUESTIONS
   and i cant tell with certainty what the menu text was. Can i guess and is it important if i guess wrong?
 - Do i need to make the mouseover animation on the menu cards stick when they are selected? How to do
   without checkbox hack?
-
+- Display the location of restaurants. WHat does this meen?
 
 
 

@@ -1,3 +1,47 @@
+.group__card:nth-of-type(1) {
+  animation: build-arrest 1s linear 1s forwards !important;
+}
+
+.group__card:nth-of-type(2) {
+  animation: build-arrest 1s linear 2s forwards !important;
+}
+
+.group__card:nth-of-type(3) {
+  animation: build-arrest 1s linear 3s forwards !important;
+}
+
+.group__card:nth-of-type(4) {
+  animation: build-arrest 1s linear 4s forwards !important;
+}
+
+.group__card:nth-of-type(5) {
+  animation: build-arrest 1s linear 5s forwards !important;
+}
+
+.group__card:nth-of-type(6) {
+  animation: build-arrest 1s linear 6s forwards !important;
+}
+
+.group__card:nth-of-type(7) {
+  animation: build-arrest 1s linear 7s forwards !important;
+}
+
+.group__card:nth-of-type(8) {
+  animation: build-arrest 1s linear 8s forwards !important;
+}
+
+.group__card:nth-of-type(9) {
+  animation: build-arrest 1s linear 9s forwards !important;
+}
+
+@keyframes build-arrest {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
 *,
 *::before,
 *::after {
@@ -241,6 +285,7 @@ h1 {
   color: #666;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
+  visibility: hidden;
 }
 .restaurant__body .menu .group__card div:first-of-type {
   position: relative;
