@@ -1,5 +1,5 @@
 QUESTIONS
-- fyi, a typo in the home page navigation 'Chose' should be spelt 'Choose'.
+- fyi, assumed typo in the home page navigation 'Chose' should be spelt 'Choose'.
 - Project brief talks about 'buttons'. Are the 3 x elements in the 'How it works' section buttons?
 - Would you agree the restaurant body elements belong in layout rather than components?
 - Restaurant pages. body element is pushed up 40px leaving a gap at the bottom. Is there a better 
@@ -15,9 +15,12 @@ QUESTIONS
   and i cant tell with certainty what the menu text was. Can i guess and is it important if i guess wrong?
 - Do i need to make the mouseover animation on the menu cards stick when they are selected? How to do
   without checkbox hack?
-- Display the location of restaurants. WHat does this meen?
+- Display the location of restaurants. What does this meen?
+- I need to finish early to get interview. Under pressure to get work and when i do ill lose this spot :( 
+  Can i add you on linkedin or anything else you can do re reference etc?
 
 
 
 TODO
-- Make location section clickable with an anchor tag.
+- Make location section clickable, maybe anchor.
+- Investigate the home page images. At least one shrinks too much inside its container when screen side is small.

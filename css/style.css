@@ -1,37 +1,13 @@
-.group__card:nth-of-type(1) {
-  animation: build-arrest 1s linear 1s forwards !important;
+.menu .menu__group:nth-of-type(1) {
+  animation: build-arrest 1s linear 400ms forwards !important;
 }
 
-.group__card:nth-of-type(2) {
-  animation: build-arrest 1s linear 2s forwards !important;
+.menu .menu__group:nth-of-type(2) {
+  animation: build-arrest 1s linear 800ms forwards !important;
 }
 
-.group__card:nth-of-type(3) {
-  animation: build-arrest 1s linear 3s forwards !important;
-}
-
-.group__card:nth-of-type(4) {
-  animation: build-arrest 1s linear 4s forwards !important;
-}
-
-.group__card:nth-of-type(5) {
-  animation: build-arrest 1s linear 5s forwards !important;
-}
-
-.group__card:nth-of-type(6) {
-  animation: build-arrest 1s linear 6s forwards !important;
-}
-
-.group__card:nth-of-type(7) {
-  animation: build-arrest 1s linear 7s forwards !important;
-}
-
-.group__card:nth-of-type(8) {
-  animation: build-arrest 1s linear 8s forwards !important;
-}
-
-.group__card:nth-of-type(9) {
-  animation: build-arrest 1s linear 9s forwards !important;
+.menu .menu__group:nth-of-type(3) {
+  animation: build-arrest 1s linear 1200ms forwards !important;
 }
 
 @keyframes build-arrest {
@@ -255,10 +231,10 @@ h1 {
   font-size: 3rem;
   color: #666;
 }
-.restaurant__body .menu .group {
+.restaurant__body .menu__group {
   padding: 2rem 0 1rem 0;
 }
-.restaurant__body .menu .group__title {
+.restaurant__body .menu__title {
   text-transform: uppercase;
   color: #666;
   font-weight: 200;
@@ -266,7 +242,7 @@ h1 {
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
-.restaurant__body .menu .group__title::before {
+.restaurant__body .menu__title::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -274,7 +250,7 @@ h1 {
   border-bottom: 3px solid #99E2D0;
   width: 4.5rem;
 }
-.restaurant__body .menu .group__card {
+.restaurant__body .menu__card {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -285,16 +261,16 @@ h1 {
   color: #666;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
-  visibility: hidden;
+  transition: all 0.2s;
 }
-.restaurant__body .menu .group__card div:first-of-type {
+.restaurant__body .menu__card div:first-of-type {
   position: relative;
   padding: 1rem;
   flex: 1 0;
   min-width: 0;
   margin-right: 2rem;
 }
-.restaurant__body .menu .group__card div:first-of-type p {
+.restaurant__body .menu__card div:first-of-type p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -302,13 +278,13 @@ h1 {
   margin-right: 5rem;
   margin-top: 0.5rem;
 }
-.restaurant__body .menu .group__card div:first-of-type h3:last-of-type {
+.restaurant__body .menu__card div:first-of-type h3:last-of-type {
   position: absolute;
   bottom: 1rem;
   right: 0;
   font-size: 1.5rem;
 }
-.restaurant__body .menu .group__card div:last-of-type {
+.restaurant__body .menu__card div:last-of-type {
   position: relative;
   flex: 0 0;
   flex-basis: 0;
@@ -317,7 +293,7 @@ h1 {
   width: 0;
   transition: all 0.2s;
 }
-.restaurant__body .menu .group__card div:last-of-type i {
+.restaurant__body .menu__card div:last-of-type i {
   visibility: hidden;
   color: #99E2D0;
   background-color: white;
@@ -331,10 +307,10 @@ h1 {
   left: 50%;
   transition: all 0.2s;
 }
-.restaurant__body .menu .group__card:hover div:last-of-type {
+.restaurant__body .menu__card:hover div:last-of-type {
   flex-basis: 6rem;
 }
-.restaurant__body .menu .group__card:hover div:last-of-type i {
+.restaurant__body .menu__card:hover div:last-of-type i {
   visibility: visible;
   transform: translate(-50%, -50%);
 }

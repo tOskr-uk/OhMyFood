@@ -47,14 +47,14 @@ $breakpoints:(
 );
 
 
+// -------------------
+// ANIMATIONS TEST
+// ------------------- 
 
-// ANIMATIONS
-// -------------
-
-@for $i from 1 through 9 {
-    .group__card:nth-of-type(#{$i}){
+@for $i from 1 through 3 {
+    .menu .menu__group:nth-of-type(#{$i}){
         // @include animate(calc($i * 500));
-        animation: build-arrest 1s linear $i+0s forwards !important;
+        animation: build-arrest 1s linear $i*400ms forwards !important;
     }
 }
 

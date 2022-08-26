@@ -80,7 +80,7 @@
                 letter-spacing: 0.5px;
                 font-weight: 600;
             }
-        
+            
             i {
                 font-size: 3rem;
                 color: $color-grey-dark
@@ -88,109 +88,105 @@
         }   
         
         .menu {
-            
-
-            .group {
+            &__group {
                 padding: 2rem 0 1rem 0;
+            }
+                  
+            &__title {
+                text-transform: uppercase;
+                color: $color-grey-dark;
+                font-weight: 200;
+                position: relative;
+                padding-bottom: .5rem;
+                margin-bottom: 1.5rem;
 
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 3px solid $color-tertiary;
+                    width: 4.5rem;
+                }
+            }
 
-                &__title {
-                    text-transform: uppercase;
-                    color: $color-grey-dark;
-                    font-weight: 200;
+            &__card {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                
+                text-decoration: none;
+                background-color: #fff;
+                border-radius: 15px;
+                margin: 1.5rem 0;
+                color: $color-grey-dark;
+                @include box-shadow;
+                overflow: hidden;
+                // visibility: hidden;
+
+                transition: all 0.2s;
+                
+                
+                div:first-of-type {
                     position: relative;
-                    padding-bottom: .5rem;
-                    margin-bottom: 1.5rem;
+                    padding: 1rem;
+                    flex: 1 0;
+                    min-width: 0;
+                    margin-right: 2rem;
 
-                    &::before {
-                        content: '';
+                    p {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        
+                        display: block;
+                        margin-right: 5rem;
+                        margin-top: .5rem;
+                    }
+
+                    h3:last-of-type {
                         position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        border-bottom: 3px solid $color-tertiary;
-                        width: 4.5rem;
+                        bottom: 1rem;
+                        right: 0;
+                        font-size: 1.5rem;
                     }
                 }
 
-                &__card {
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: space-between;
+                div:last-of-type {
+                    position: relative;
+                    flex: 0 0;
+                    flex-basis: 0;
+                    background-color: $color-tertiary;
+                    margin-left: 0;
+                    width: 0;
+                    transition: all 0.2s;
                     
-                    text-decoration: none;
-                    background-color: #fff;
-                    border-radius: 15px;
-                    margin: 1.5rem 0;
-                    color: $color-grey-dark;
-                    @include box-shadow;
-                    overflow: hidden;
-                    visibility: hidden;
-
-                    
-                    
-                    div:first-of-type {
-                        position: relative;
-                        padding: 1rem;
-                        flex: 1 0;
-                        min-width: 0;
-                        margin-right: 2rem;
-
-                        p {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            
-                            display: block;
-                            margin-right: 5rem;
-                            margin-top: .5rem;
-                        }
-
-                        h3:last-of-type {
-                            position: absolute;
-                            bottom: 1rem;
-                            right: 0;
-                            font-size: 1.5rem;
-                        }
-                    }
-
-                    div:last-of-type {
-                        position: relative;
-                        flex: 0 0;
-                        flex-basis: 0;
-                        background-color: $color-tertiary;
-                        margin-left: 0;
-                        width: 0;
+                    i {
+                        visibility: hidden;
+                        color: $color-tertiary;
+                        background-color: white;
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        padding: .5rem;
+                        border-radius: 50%;
+                        
+                        position: absolute;
+                        transform: translate(0, -50%);
+                        top: 50%;
+                        left: 50%;
+                        
                         transition: all 0.2s;
+                    }
+                }
+                
+                &:hover {
+                    div:last-of-type{
+                        flex-basis: 6rem;
                         
                         i {
-                            visibility: hidden;
-                            color: $color-tertiary;
-                            background-color: white;
-                            height: 2.5rem;
-                            width: 2.5rem;
-                            padding: .5rem;
-                            border-radius: 50%;
-                            
-                            position: absolute;
-                            transform: translate(0, -50%);
-                            top: 50%;
-                            left: 50%;
-                            
-                            transition: all 0.2s;
+                            visibility: visible;
+                            transform: translate(-50%, -50%);
                         }
-                    }
-                    
-                    &:hover {
-                        div:last-of-type{
-                            flex-basis: 6rem;
-                            
-                            i {
-                                visibility: visible;
-                                transform: translate(-50%, -50%);
-                            }
-                        }
-
-
                     }
                 }
             }  
