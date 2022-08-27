@@ -73,7 +73,7 @@
             display: flex;
             justify-content: space-between;            
             align-items: center;
-            padding: 2.5rem 2rem 2rem 0;
+            padding: 2rem 2rem 0 0;
 
             h1 {
                 font-family: Shrikhand, sans-serif;
@@ -87,18 +87,14 @@
             }
         }   
         
-        .menu {
-            &__group {
-                padding: 2rem 0 1rem 0;
-            }
-                  
+        .menu {   
             &__title {
                 text-transform: uppercase;
-                color: $color-grey-dark;
+                color: $color-grey-darker;
                 font-weight: 200;
                 position: relative;
-                padding-bottom: .5rem;
-                margin-bottom: 1.5rem;
+                padding: 3rem 0 .75rem 0;
+                // margin-bottom: 1.5rem;
 
                 &::before {
                     content: '';
@@ -122,10 +118,9 @@
                 color: $color-grey-dark;
                 @include box-shadow;
                 overflow: hidden;
-                // visibility: hidden;
+                opacity: 0;
 
                 transition: all 0.2s;
-                
                 
                 div:first-of-type {
                     position: relative;
@@ -159,7 +154,7 @@
                     background-color: $color-tertiary;
                     margin-left: 0;
                     width: 0;
-                    transition: all 0.2s;
+                    transition: all 0.3s;
                     
                     i {
                         visibility: hidden;
@@ -175,7 +170,7 @@
                         top: 50%;
                         left: 50%;
                         
-                        transition: all 0.2s;
+                        transition: all 0.3s;
                     }
                 }
                 
@@ -185,7 +180,7 @@
                         
                         i {
                             visibility: visible;
-                            transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%) rotateZ(360deg);
                         }
                     }
                 }

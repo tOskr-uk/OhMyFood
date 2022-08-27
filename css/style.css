@@ -1,21 +1,50 @@
-.menu .menu__group:nth-of-type(1) {
-  animation: build-arrest 1s linear 400ms forwards !important;
+.menu__card:nth-of-type(1) {
+  animation: build-arrest 0.25s linear 0.25s forwards;
 }
 
-.menu .menu__group:nth-of-type(2) {
-  animation: build-arrest 1s linear 800ms forwards !important;
+.menu__card:nth-of-type(2) {
+  animation: build-arrest 0.25s linear 0.5s forwards;
 }
 
-.menu .menu__group:nth-of-type(3) {
-  animation: build-arrest 1s linear 1200ms forwards !important;
+.menu__card:nth-of-type(3) {
+  animation: build-arrest 0.25s linear 0.75s forwards;
+}
+
+.menu__card:nth-of-type(4) {
+  animation: build-arrest 0.25s linear 1s forwards;
+}
+
+.menu__card:nth-of-type(5) {
+  animation: build-arrest 0.25s linear 1.25s forwards;
+}
+
+.menu__card:nth-of-type(6) {
+  animation: build-arrest 0.25s linear 1.5s forwards;
+}
+
+.menu__card:nth-of-type(7) {
+  animation: build-arrest 0.25s linear 1.75s forwards;
+}
+
+.menu__card:nth-of-type(8) {
+  animation: build-arrest 0.25s linear 2s forwards;
+}
+
+.menu__card:nth-of-type(9) {
+  animation: build-arrest 0.25s linear 2.25s forwards;
 }
 
 @keyframes build-arrest {
-  from {
-    visibility: hidden;
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  to {
-    visibility: visible;
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 *,
@@ -220,7 +249,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 2rem 2rem 0;
+  padding: 2rem 2rem 0 0;
 }
 .restaurant__body .name h1 {
   font-family: Shrikhand, sans-serif;
@@ -231,16 +260,12 @@ h1 {
   font-size: 3rem;
   color: #666;
 }
-.restaurant__body .menu__group {
-  padding: 2rem 0 1rem 0;
-}
 .restaurant__body .menu__title {
   text-transform: uppercase;
-  color: #666;
+  color: #333;
   font-weight: 200;
   position: relative;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  padding: 3rem 0 0.75rem 0;
 }
 .restaurant__body .menu__title::before {
   content: "";
@@ -261,6 +286,7 @@ h1 {
   color: #666;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
+  opacity: 0;
   transition: all 0.2s;
 }
 .restaurant__body .menu__card div:first-of-type {
@@ -291,7 +317,7 @@ h1 {
   background-color: #99E2D0;
   margin-left: 0;
   width: 0;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 .restaurant__body .menu__card div:last-of-type i {
   visibility: hidden;
@@ -305,14 +331,14 @@ h1 {
   transform: translate(0, -50%);
   top: 50%;
   left: 50%;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 .restaurant__body .menu__card:hover div:last-of-type {
   flex-basis: 6rem;
 }
 .restaurant__body .menu__card:hover div:last-of-type i {
   visibility: visible;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotateZ(360deg);
 }
 .restaurant__body .btn {
   margin-top: 4rem;

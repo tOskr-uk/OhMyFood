@@ -47,27 +47,16 @@ $breakpoints:(
 );
 
 
-// -------------------
-// ANIMATIONS TEST
-// ------------------- 
 
-@for $i from 1 through 3 {
-    .menu .menu__group:nth-of-type(#{$i}){
-        // @include animate(calc($i * 500));
-        animation: build-arrest 1s linear $i*400ms forwards !important;
+// ANIMATIONS TEST
+@for $i from 1 through 9 {
+    .menu__card:nth-of-type(#{$i}){
+        animation: build-arrest .25s linear $i*.25s forwards;
     }
 }
 
-
-
-
-@mixin animate($delay) {
-    // name, duration, timing function, delay, iteration count, direction
-    animation: build-arrest 1s linear #{$delay}ms 1 forwards;
-}
-
-
 @keyframes build-arrest {
-    from {visibility: hidden;}
-    to {visibility: visible;}
+    0% {opacity: 0; transform: translateY(10px);}
+    40% {opacity: 1;}
+    100% {opacity: 1; transform: translateY(0);}
 }
