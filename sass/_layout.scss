@@ -4,6 +4,10 @@
     padding: 2rem 0 1rem 0;
     @include box-shadow($x:0, $color:$color-grey);
     position: relative;
+    
+    .logo {
+        z-index: 10;
+    }
 
     a {
         position: absolute;
@@ -173,6 +177,12 @@
                         transition: all 0.3s;
                     }
                 }
+
+                @for $i from 1 through 9 {
+                    &:nth-of-type(#{$i}){
+                        animation: menu-build-arrest .25s linear $i*.25s forwards;
+                    }
+                }
                 
                 &:hover {
                     div:last-of-type{
@@ -184,6 +194,7 @@
                         }
                     }
                 }
+                
             }  
         } 
 
