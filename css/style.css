@@ -76,7 +76,7 @@ h1 {
   overflow: hidden;
   transition: all 0.2s;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   .card:hover {
     transform: translateY(-2px);
     box-shadow: 2px 3px 5px 2px #aaa;
