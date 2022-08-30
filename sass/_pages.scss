@@ -110,7 +110,7 @@
     align-items: center;
     visibility: hidden;
 
-    animation: disband 3s linear 1;
+    animation: disband 2s linear 1;
 
     .spinner {
         height: 100px;
@@ -120,6 +120,6 @@
         border-radius: 50%;
         margin-top: 5rem;
 
-        animation: animate-spinner .9s linear 3;
+        animation: animate-spinner .6s linear 3;
     }
 }

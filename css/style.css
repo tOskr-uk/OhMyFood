@@ -468,7 +468,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   visibility: hidden;
-  animation: disband 3s linear 1;
+  animation: disband 2s linear 1;
 }
 .onload .spinner {
   height: 100px;
@@ -477,7 +477,7 @@ h1 {
   border-top: 8px solid #9356DC;
   border-radius: 50%;
   margin-top: 5rem;
-  animation: animate-spinner 0.9s linear 3;
+  animation: animate-spinner 0.6s linear 3;
 }
 
 /*# sourceMappingURL=style.css.map */
