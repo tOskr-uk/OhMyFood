@@ -12,7 +12,7 @@
     }
 }
 
-.section-book {   
+.section-book {
     background-color: $color-grey-lighter;
     @include box-shadow($y:3px, $color:$color-grey);
     @include flex-center;
@@ -21,11 +21,13 @@
 
     h1 {
         margin-bottom: 3rem;
+        font-size: 4rem;
     }
 
     p {
         color: $color-grey-dark;
         margin-bottom: 3rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -77,9 +79,10 @@
                     border-radius: 5px;
                     flex-direction: column;
                     height: auto;
-                    padding: 2rem 1.5rem;
-                    // border-radius: 2rem;
+                    padding: 2.5rem;
+                    text-align: center;
                     border-top-left-radius: 2rem;
+                    font-size: 1.8rem;
                 }
 
                 i {
@@ -91,7 +94,6 @@
                         padding-bottom: 1rem;
                     }
                 }
-
             
                 &::before {
                     background-color: $color-primary;
@@ -112,7 +114,7 @@
                         // background-color: $color-primary;
                         // border: 2px solid $color-primary;
                         // color: $color-primary;
-                        font-size: 1.8rem;
+                        font-size: 1.7rem;
                         padding-top: .3rem;
                         height: 3rem;
                         width: 3rem;

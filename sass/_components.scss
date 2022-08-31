@@ -145,5 +145,9 @@
         font-size: 1.2rem;
         background-color: $color-tertiary;
         border-radius: 2px;
+
+        @include breakpoint-tablet {
+            font-size: 1.5rem;
+        }
     }
 }
