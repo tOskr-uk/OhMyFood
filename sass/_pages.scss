@@ -78,7 +78,8 @@
                     flex-direction: column;
                     height: auto;
                     padding: 2rem 1.5rem;
-                    border-radius: 2rem;
+                    // border-radius: 2rem;
+                    border-top-left-radius: 2rem;
                 }
 
                 i {
@@ -132,6 +133,16 @@
 
 .section-restaurants {
     background-color: $color-grey-lighter;
+
+    @include breakpoint-tablet {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+    }
+
+    h1 {
+        width: 100%;
+    }
 }
 
 .onload {
