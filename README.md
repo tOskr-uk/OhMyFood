@@ -22,5 +22,6 @@ QUESTIONS
 
 
 TODO
-- Make location section clickable, maybe anchor.
-- Investigate the home page images. At least one shrinks too much inside its container when screen side is small.
+- Get rid of the white space on the restaurant pages cased by shifting the restaurant section up onto the image.
+- Review and delete as required the questions above
+- Look at replacing the checkboxes with a focs pseudo class.

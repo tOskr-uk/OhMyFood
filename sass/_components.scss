@@ -3,25 +3,33 @@
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 1.5rem 2rem;
+    padding: .9em 2em;
+    font-size: 1.6rem;
     border-radius: 50px;
     background-image: linear-gradient($color-secondary, $color-primary);
     @include box-shadow($x:0, $color:$color-grey);
     transition: all 0.2s;
 
-    &:hover {
-        filter: brightness(1.08);
-        transform: translateY(-2px);
-        @include box-shadow($x:0, $y:4px, $blur:8px, $spread:1px, $color:$color-grey-dark);
+    @include breakpoint-tablet {
+        font-size: 2.2rem;
+    }
+
+    @include breakpoint-desktop {        
+        &:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            @include box-shadow($x:0, $y:4px, $blur:8px, $spread:1px, $color:$color-grey-dark);
+        }
     }
 }
 
 
+
 // CARDS
-.card {
+.card-rest {
     position: relative;
-    height: 23rem;
-    border-radius: 10px;
+    height: 17em;
+    border-radius: .8em;
     @include box-shadow;
     overflow: hidden;
     transition: all 0.2s;
@@ -29,23 +37,22 @@
     @include breakpoint-tablet {
         flex: 1 0 40%;
     }
-
-    &:hover {
-        @include breakpoint-desktop {
+   
+    @include breakpoint-desktop {
+        height: 22em;
+        &:hover {
             transform: translateY(-2px);
             @include box-shadow($y: 3px, $color: $color-grey);
         }
     }
     
-        
-    
     &:not(:last-child){
-        margin: 2rem 0;
+        margin: 1.4em 0;
         @include breakpoint-tablet {margin: 0;}
     }
 
     &:nth-of-type(2) img {
-        object-position: 0 -140px;
+        object-position: 0 -10.5em;
     }
 
     &__anchor {
@@ -74,25 +81,28 @@
     &__info {
         height: 30%;
         background-color: white;
-        // font-size: 70%;
         position: relative;
 
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        padding: 0 1rem;
+        padding: 0 .8em;
 
         
         h2 {
-            margin-bottom: .5rem;
-            font-size: 1.7rem;
+            margin-bottom: .3em;
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 2rem;
         }
 
         div {
             text-decoration: none;
             position: absolute;
-            top: 1.8rem;
-            right: 2rem;
+            top: 1.3em;
+            right: 1.5em;
             z-index: 5;
 
             input[type=checkbox] {
@@ -103,6 +113,12 @@
                 
                 &:checked ~ i:last-child {
                     opacity: 1;
+                }
+
+                @include breakpoint-desktop {
+                    &:hover ~ i:last-child {
+                        opacity: 1;
+                    }
                 }
             }
 
@@ -117,7 +133,7 @@
             }
 
             i { 
-                font-size: 2.2rem;
+                font-size: 3rem;
                 color: $color-primary;
                 
                 &:last-child {
@@ -132,22 +148,135 @@
     }
 
     &--new &__anchor::before {
+        @include flex-center;
         position: absolute;
-        top: 10px;
-        right: 10px;
-        height: 25px;
-        width: 70px;
+        top: 1em;
+        right: 1em;
+        height: 2em;
+        width: 5.8em;
         
         content: 'New';
-        color: darken($color-tertiary, 50%);
-        text-align: center;
-        line-height: 25px;
-        font-size: 1.2rem;
+        color: darken($color-tertiary, 40%);
+
+        font-size: 1.6rem;
+        font-weight: 600;
         background-color: $color-tertiary;
         border-radius: 2px;
 
         @include breakpoint-tablet {
+            // font-size: 1.5rem;
+        }
+    }
+}
+
+.card-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 1em;
+    margin: 1em 0;
+    color: $color-grey-dark;
+    @include box-shadow;
+    overflow: hidden;
+    opacity: 0;
+    
+    transition: all 0.2s;
+
+    @include breakpoint-tablet {
+        flex: 1 0 30%;
+        margin-top: 0;
+    }
+    
+    div:first-of-type {
+        position: relative;
+        padding: .75em;
+        flex: 1 0;
+        min-width: 0;
+        margin-right: 2rem;
+        
+        h3:first-of-type {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            display: block;
+            margin-right: 2em;
+            margin-top: .3em;
+        }
+
+        h3:last-of-type {
+            position: absolute;
+            bottom: .8em;
+            right: 0;
             font-size: 1.5rem;
         }
     }
+
+    div:last-of-type {
+        position: relative;
+        flex: 0 0;
+        flex-basis: 0;
+        background-color: $color-tertiary;
+        margin-left: 0;
+        width: 0;
+        transition: all 0.3s;
+        
+        i {
+            visibility: hidden;
+            color: $color-tertiary;
+            background-color: white;
+            height: 2.5rem;
+            width: 2.5rem;
+            padding: .5rem;
+            border-radius: 50%;
+            
+            position: absolute;
+            transform: translate(0, -50%);
+            top: 50%;
+            left: 50%;
+            
+            transition: all 0.3s;
+        }
+    }
+    
+    &:focus {
+        div:last-of-type{
+            flex-basis: 4em;
+            
+            i {
+                visibility: visible;
+                transform: translate(-50%, -50%) rotateZ(360deg);
+            }
+        }
+    }
+
+    @include breakpoint-desktop {
+        &:hover {
+            div:last-of-type{
+                flex-basis: 4em;
+                
+                i {
+                    visibility: visible;
+                    transform: translate(-50%, -50%) rotateZ(360deg);
+                }
+            }
+        }
+    }
+    
+    // MENU ANIMATION
+    @for $i from 1 through 9 {
+        &:nth-of-type(#{$i}){
+            animation: menu-build-arrest .25s linear $i*.25s forwards;
+        }
+    }
+
 }

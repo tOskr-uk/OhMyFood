@@ -13,10 +13,6 @@
 html {
     font-size: 62.5%;
     font-family: $font-text;
-
-    @include breakpoint-tablet {
-        font-size: 75%;
-    }
 }
 
 body {

@@ -1,62 +1,86 @@
+// HOME PAGE
 .section-location {
-    background-color: $color-grey-light;
     @include flex-center;
     flex-flow: row nowrap;
-    padding: 1.5rem 0;
+
+    background-color: $color-grey-light;
+    padding: 1em 0;
     position: relative;
     z-index: -1;
     color: $color-grey-darker;
+    font-size: 1.8rem;
+
+    @include breakpoint-tablet {
+        font-size: 2.2rem;
+    }
 
     i {
-        margin-right: 1.5rem;
+        margin-right: 1em;
     }
 }
 
 .section-book {
     background-color: $color-grey-lighter;
-    @include box-shadow($y:3px, $color:$color-grey);
+    @include box-shadow($x:0, $y:-1px, $color:$color-grey, $blur:5px,);
+    clip-path: inset(-7px 0 0 0);
     @include flex-center;
     flex-flow: column nowrap;
     text-align: center;
 
     h1 {
-        margin-bottom: 3rem;
-        font-size: 4rem;
+        margin-bottom: 1.4em;
+        font-size: 2.6rem;
+
+        @include breakpoint-tablet {
+            font-size: 4rem;
+            margin-bottom: .8em;
+        }
     }
 
     p {
         color: $color-grey-dark;
-        margin-bottom: 3rem;
-        font-size: 1.8rem;
+        margin-bottom: 2em;
+        font-size: 2rem;
+        
+        @include breakpoint-tablet {
+            font-size: 2.5rem;
+        }
     }
 }
 
 .section-how-it-works {
     background-color: white;
+    
+    h1 {
+        @include breakpoint-tablet {
+            font-size: 3rem;
+        }
+    }
 
     ul {
         list-style-type: none;
-        margin-left: 1rem;
+        margin-left: .6em;
 
         @include breakpoint-tablet {
             display: flex;
+            gap: 1.8em;
             justify-content: center;
-            margin-left: 0;
+        }
+
+        @include breakpoint-desktop {
+            gap: 2.5em;
         }
 
         li {
             &:nth-child(1) a::before{content: '1';}
             &:nth-child(2) a::before{content: '2';}
             &:nth-child(3) a::before{content: '3';}
+
             @include breakpoint-tablet {
-                width: 31%;
+                flex: 1 0 30%;
             }
 
-            &:nth-child(2){
-                @include breakpoint-tablet {
-                    margin: 0 auto;
-                }
-            }
+            
             
             a {
                 display: flex;
@@ -64,86 +88,95 @@
                 align-items: center;
 
                 position: relative;
-                height: 6rem;
-                margin-top: 2rem;
-                padding-left: 2.5rem;
-                border-radius: 20px;
+                height: 4.5em;
+                margin-top: 1.6em;
+                padding-left: 1.5em;
+                border-radius: 1.2em;
                 background-color: $color-grey-lighter;
                 text-decoration: none;
-                font-size: 1.4rem;
+                font-size: 1.8rem;
                 font-weight: bold;
                 color: $color-grey-darker;
 
                 @include box-shadow($x:0);
                 @include breakpoint-tablet {
-                    border-radius: 5px;
-                    flex-direction: column;
-                    height: auto;
-                    padding: 2.5rem;
-                    text-align: center;
-                    border-top-left-radius: 2rem;
-                    font-size: 1.8rem;
+                    padding: 0 .4em 0 1em;
+                    font-size: 2rem;
+                }
+                @include breakpoint-desktop {
+                    &:hover {
+                        transform: translateY(-2px);
+                        @include box-shadow($y: 3px, $color: $color-grey);
+                    }
                 }
 
                 i {
-                    padding-right: 1.5rem;
+                    padding-right: .8em;
                     color: $color-grey-dark;
+                    font-size: 2rem;
                     @include breakpoint-tablet {
+                        padding-right: .4em;
                         font-size: 3rem;
-                        padding: 0;
-                        padding-bottom: 1rem;
+                    }
+                    @include breakpoint-desktop {
+                        padding: 0 .5em;
                     }
                 }
             
                 &::before {
-                    background-color: $color-primary;
+                    @include flex-center;
+                    
                     position: absolute;
-                    top: 1.6rem;
-                    left: -1.5rem;
-                    height: 2.5rem;
-                    width: 2.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -1em;
+                    height: 1.8em;
+                    width: 1.8em;
+                    
+                    background-color: $color-primary;
                     border-radius: 50%;
                     color: $color-grey-lighter;
-                    text-align: center;
-                    font-size: 1.4rem;
-                    line-height: 2.5rem;
+                    font-size: 1.6rem;
 
                     @include breakpoint-tablet {
-                        top: .6rem;
-                        left: .6rem;
-                        // background-color: $color-primary;
-                        // border: 2px solid $color-primary;
-                        // color: $color-primary;
-                        font-size: 1.7rem;
-                        padding-top: .3rem;
-                        height: 3rem;
-                        width: 3rem;
+                        left: -1.2em;
+                        height: 2em;
+                        width: 2em;
+                    }
+                    @include breakpoint-desktop {
+                        height: 2em;
+                        width: 2em;
+                        font-size: 2rem;
                     }
                 }
             }       
         }
-    }
 
-    .li--active a {
-        background-color: rgba($color: $color-primary, $alpha: 0.15);
-
-        i {
-            color: $color-primary;
+        .li--active a {
+            background-color: rgba($color: $color-primary, $alpha: 0.15);
+    
+            i {
+                color: $color-primary;
+            }
         }
     }
 }
 
 .section-restaurants {
     background-color: $color-grey-lighter;
-
+    // @include max-width;
     @include breakpoint-tablet {
         display: flex;
         flex-flow: row wrap;
-        gap: 2rem;
+        gap: 1.5em;
     }
 
     h1 {
         width: 100%;
+
+        @include breakpoint-tablet {
+            font-size: 3rem;
+        }
     }
 }
 
@@ -154,8 +187,7 @@
     width: 100%;
     height: 100%;
     z-index: 5;
-    padding-top: 6rem;
-    // background-color: rgba($color: #fff, $alpha: .75);
+    padding-top: 4em;
     background-color: #fff;
     
     display: flex;
@@ -166,13 +198,112 @@
     // animation: disband 2s linear 1;
 
     .spinner {
-        height: 100px;
-        width: 100px;
-        border: 8px solid $color-grey-light;
-        border-top: 8px solid $color-primary;
+        height: 10rem;
+        width: 10rem;
+        border: .8rem solid $color-grey-light;
+        border-top: .8rem solid $color-primary;
         border-radius: 50%;
-        margin-top: 5rem;
+        margin-top: 3em;
 
         // animation: animate-spinner .6s linear 3;
+    }
+}
+
+
+// RESTAURANTS PAGES
+.restaurant {
+
+    height: calc(100% - -15em);
+    &__background {
+        & img {
+            width: 100%;
+            
+            @include breakpoint-tablet {
+                object-position: 0 -10.5em;
+            }
+
+            @include breakpoint-desktop {
+                object-position: 0 -15em;
+            }
+        }
+    }
+    
+    &__body {
+        background-color: $color-grey-lighter;
+        border-top-left-radius: 2.5em;
+        border-top-right-radius: 2.5em;
+        transform: translateY(-2.8em);
+        padding: 1.4em 1em 3.2em 1em;
+        margin-bottom: -2.5em;
+        
+        @include breakpoint-tablet {
+            transform: translateY(-15em);
+            margin-bottom: -15em;
+            border-top-left-radius: 3em;
+            border-top-right-radius: 3em;
+        }
+
+        @include breakpoint-desktop {
+            transform: translateY(-25em);
+            margin-bottom: -25em;
+        }
+        
+        .name {
+            display: flex;
+            justify-content: space-between;            
+            align-items: center;
+            padding: 1em 2em 0 0;
+
+            h1 {
+                font-family: Shrikhand, sans-serif;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+            }
+            
+            i {
+                font-size: 3rem;
+                color: $color-grey-dark
+            }
+        }   
+        
+        .menu {   
+            @include breakpoint-tablet {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 1em;
+            }
+
+            &__title {
+                text-transform: uppercase;
+                color: $color-grey-darker;
+                font-weight: 200;
+                position: relative;
+                padding: 1.5em 0 .5em 0;
+                
+                @include breakpoint-tablet {
+                    width: 100%;
+                    padding-top: 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 3px solid $color-tertiary;
+                    width: 2.4em;
+                }
+
+            }
+        } 
+        
+        .btn {
+            margin-top: 2em;
+            padding-left: 5em;
+            padding-right: 5em;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }

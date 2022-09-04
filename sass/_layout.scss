@@ -1,247 +1,110 @@
 .header {
-    flex-flow: row nowrap;
+    @include box-shadow($x:0, $y:2px, $color:$color-grey);
+    clip-path: inset(0 0 -7px 1px);
+    @include max-width;
     @include flex-center;
-    padding: 2rem 0 1rem 0;
-    @include box-shadow($x:0, $color:$color-grey);
     position: relative;
+    flex-flow: row nowrap;
+    padding: 1.4em 0 .8em 0;
     
     .logo {
         z-index: 10;
+        flex: 1 0;
+        text-align: center;
     }
 
     a {
-        position: absolute;
-        left: 0;
-        bottom: 1rem;
-
-
         i {
-            padding: 1rem;
-            margin-bottom: .5rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            z-index: 11;
+            padding: 20px;
             font-size: 2rem;
             color: $color-grey-darker;
-        }
-    }
-}
 
-.section {
-    padding: 4rem 2rem 5.5rem 2rem;
-}
-
-
-.restaurant {
-    &__background {
-        & img {
-            width: 100%;
-        }
-    }
-
-    &__body {
-        background-color: $color-grey-lighter;
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        transform: translateY(-5rem);
-        margin-bottom: -60px;
-        padding: 2rem 1.2rem 8rem 1.2rem;
-
-        
-        .name {
-            display: flex;
-            justify-content: space-between;            
-            align-items: center;
-            padding: 2rem 2rem 0 0;
-
-            h1 {
-                font-family: Shrikhand, sans-serif;
-                letter-spacing: 0.5px;
-                font-weight: 600;
-            }
-            
-            i {
+            @include breakpoint-tablet {
                 font-size: 3rem;
-                color: $color-grey-dark
             }
-        }   
-        
-        .menu {   
-            &__title {
-                text-transform: uppercase;
-                color: $color-grey-darker;
-                font-weight: 200;
-                position: relative;
-                padding: 3rem 0 .75rem 0;
-                // margin-bottom: 1.5rem;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    border-bottom: 3px solid $color-tertiary;
-                    width: 4.5rem;
-                }
-            }
-            
-            &__card {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
-                
-                text-decoration: none;
-                background-color: #fff;
-                border-radius: 15px;
-                margin: 1.5rem 0;
-                color: $color-grey-dark;
-                @include box-shadow;
-                overflow: hidden;
-                opacity: 0;
-                
-                transition: all 0.2s;
-                
-                div:first-of-type {
-                    position: relative;
-                    padding: 1rem;
-                    flex: 1 0;
-                    min-width: 0;
-                    margin-right: 2rem;
-                    
-                    p {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        
-                        display: block;
-                        margin-right: 5rem;
-                        margin-top: .5rem;
-                    }
-
-                    h3:last-of-type {
-                        position: absolute;
-                        bottom: 1rem;
-                        right: 0;
-                        font-size: 1.5rem;
-                    }
-                }
-
-                div:last-of-type {
-                    position: relative;
-                    flex: 0 0;
-                    flex-basis: 0;
-                    background-color: $color-tertiary;
-                    margin-left: 0;
-                    width: 0;
-                    transition: all 0.3s;
-                    
-                    i {
-                        visibility: hidden;
-                        color: $color-tertiary;
-                        background-color: white;
-                        height: 2.5rem;
-                        width: 2.5rem;
-                        padding: .5rem;
-                        border-radius: 50%;
-                        
-                        position: absolute;
-                        transform: translate(0, -50%);
-                        top: 50%;
-                        left: 50%;
-                        
-                        transition: all 0.3s;
-                    }
-                }
-
-                @for $i from 1 through 9 {
-                    &:nth-of-type(#{$i}){
-                        animation: menu-build-arrest .25s linear $i*.25s forwards;
-                    }
-                }
-                
-                &:hover {
-                    div:last-of-type{
-                        flex-basis: 6rem;
-                        
-                        i {
-                            visibility: visible;
-                            transform: translate(-50%, -50%) rotateZ(360deg);
-                        }
-                    }
-                }
-                
-            }  
-        } 
-        
-        .btn {
-            margin-top: 4rem;
-            padding-left: 8rem;
-            padding-right: 8rem;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
         }
     }
+}
+
+.main {
+    .section {
+        padding: 3em 1.5em 3.8em 1.5em;
+    }
+}
+
+.content {
+    @include max-width;
 }
 
 .footer {
-    background-color: $color-grey-darker;
-    color: white;
-    padding: 3rem 2rem;
-    display: flex;
-    flex-flow: column nowrap;
-    
-    @include breakpoint-tablet {
-        flex-flow: row wrap;
-    }
-
-    .logo {
-        width: 100%;
-        img {
-            filter: invert(100%);
-            width: 10.5rem;
-        }
-    }
-    
-    a {
-        display: block;
-        margin: 1rem 0 0 0;
-        text-decoration: none;
-        color: inherit;
-
-        // @for $i from 1 through 4 {
-        //     &:nth-of-type(#{$i}){
-        //         order: $i;
-        //     }
-        // }
-
+    .content {
+        background-color: $color-grey-darker;
+        @include max-width;
+        color: white;
+        padding: 2em 1.7em;
+        display: flex;
+        flex-flow: column nowrap;
+        font-size: 1.6rem;
+        
         @include breakpoint-tablet {
-            flex: 1 0 50%
+            flex-flow: row wrap;
+            font-size: 2rem;
         }
-
-        &:nth-of-type(1){
-            order: 1;
-        }
-
-        &:nth-of-type(2){
-            order: 2;
-            @include breakpoint-tablet {
-                order: 3;
+        
+        .logo {
+            width: 100%;
+            img {
+                filter: invert(100%);
+                width: 7em;
             }
         }
-
-        &:nth-of-type(3){
-            order: 3;
+        
+        a {
+            display: block;
+            margin: .6em 0 0 0;
+            text-decoration: none;
+            color: inherit;
+            
             @include breakpoint-tablet {
+                flex: 1 0 50%
+            }
+            
+            &:nth-of-type(1){
+                order: 1;
+            }
+            
+            &:nth-of-type(2){
                 order: 2;
+                @include breakpoint-tablet {
+                    order: 3;
+                }
             }
-        }
+            
+            &:nth-of-type(3){
+                order: 3;
+                @include breakpoint-tablet {
+                    order: 2;
+                }
+            }
+            
+            &:nth-of-type(4){
+                order: 4;
+                margin-bottom: 2rem;
 
-        &:nth-of-type(4){
-            order: 4;
-            margin-bottom: 2rem;
-        }
-
-        i {
-            font-size: 1.3rem;
-            width: 2.5rem;
+                @include breakpoint-tablet {
+                    margin-bottom: 0;
+                }
+            }
+            
+            i {
+                font-size: 1.3rem;
+                width: 2em;
+            }
         }
     }
 }

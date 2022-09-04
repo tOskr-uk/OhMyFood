@@ -12,9 +12,16 @@ $color-grey-darker: #333;
 $font-logo: 'Shrikhand', cursive;
 $font-text: 'Roboto', sans-serif;
 
+$max-width: 1200px;
+
 
 
 // MIXINS
+@mixin max-width {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
 @mixin box-shadow($x:2px, $y:2px, $blur:5px, $spread:2px, $color:$color-grey-light){
     box-shadow: $x $y $blur $spread $color;
 }
