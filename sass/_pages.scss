@@ -220,18 +220,20 @@
 .restaurant {
     overflow: hidden;
 
-    height: calc(100% - -15em);
     &__background {
-        & img {
+        img {
+            max-height: 275px;
+            object-fit: cover;
             width: 100%;
-            
-            @include breakpoint-tablet {
-                object-position: 0 -10.5em;
-            }
+            height: auto;
+        }
 
-            @include breakpoint-desktop {
-                object-position: 0 -15em;
-            }
+        @include breakpoint-tablet {
+            object-position: 0 -10.5em;
+        }
+
+        @include breakpoint-desktop {
+            object-position: 0 -15em;
         }
     }
     
@@ -239,21 +241,9 @@
         background-color: $color-grey-lighter;
         border-top-left-radius: 2.5em;
         border-top-right-radius: 2.5em;
-        transform: translateY(-2.8em);
-        margin-bottom: -3.5em;
+        transform: translateY(-2.7em);
+        margin-bottom: -2.7em;
         padding: 1.4em 1em 3.2em 1em;
-        
-        @include breakpoint-tablet {
-            transform: translateY(-15em);
-            margin-bottom: -15em;
-            border-top-left-radius: 3em;
-            border-top-right-radius: 3em;
-        }
-
-        @include breakpoint-desktop {
-            transform: translateY(-25em);
-            margin-bottom: -25em;
-        }
         
         .name {
             display: flex;

@@ -17,8 +17,8 @@
     @include breakpoint-desktop {        
         &:hover {
             filter: brightness(1.08);
-            transform: translateY(-2px);
-            @include box-shadow($x:0, $y:4px, $blur:8px, $spread:1px, $color:$color-grey-dark);
+            transform: translateY(-4px);
+            @include box-shadow($x:0, $y:4px, $blur:4px, $spread:2px, $color:$color-grey-dark);
         }
     }
 }
@@ -273,7 +273,7 @@
     }
     
     // MENU ANIMATION
-    @for $i from 1 through 9 {
+    @for $i from 1 through 10 {
         &:nth-of-type(#{$i}){
             animation: menu-build-arrest .25s linear $i*.25s forwards;
         }
