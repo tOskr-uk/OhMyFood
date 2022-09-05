@@ -208,7 +208,7 @@ h1 {
   background-color: #fff;
   border-radius: 1em;
   margin: 1em 0;
-  color: #666;
+  color: black;
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
   opacity: 0;
@@ -216,7 +216,8 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .card-menu {
-    flex: 1 0 30%;
+    margin: 0 3px;
+    flex: 0 1 31%;
     margin-top: 0;
   }
 }
@@ -228,7 +229,6 @@ h1 {
   margin-right: 2rem;
 }
 .card-menu div:first-of-type h3:first-of-type {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -711,7 +711,6 @@ h1 {
 @media screen and (min-width: 768px) {
   .restaurant__body .menu__title {
     width: 100%;
-    padding-top: 0;
   }
 }
 .restaurant__body .menu__title::before {

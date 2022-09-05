@@ -178,7 +178,7 @@
     background-color: #fff;
     border-radius: 1em;
     margin: 1em 0;
-    color: $color-grey-dark;
+    color: black;
     @include box-shadow;
     overflow: hidden;
     opacity: 0;
@@ -186,7 +186,8 @@
     transition: all 0.2s;
 
     @include breakpoint-tablet {
-        flex: 1 0 30%;
+        margin: 0 3px;
+        flex: 0 1 31%;
         margin-top: 0;
     }
     
@@ -198,7 +199,6 @@
         margin-right: 2rem;
         
         h3:first-of-type {
-            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
