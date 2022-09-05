@@ -8,12 +8,13 @@ QUESTIONS
   points. An example of the expected effect is provided..." Example animation and mockup cards do not show 
   suspension points on the dish title. They do show them on the description which is how I have built the 
   project. This ok? 
+- I think im getting a bit obsessed with controlling the card height which I may need to create custom classes to control 
+  their heights to better manage how they react to the animation when hovered or clicked. Are thes eimperfections acceptable 
+  for the scope of this project? Or will i need to add the custom classes? This is for the menu cards (See 'The Enchanted Plate')
 - Consider leaving tablet breakpoint the same as mobile else too much of the menu text is hidden away. 
 
 
 
 TODO
 - Look at replacing the checkboxes with a focs pseudo class.
-- Remove box shadow from restaurant headers.
 - Check menus for french chars and add as required (found one on dessert section of restaurant_4).
-- Check again text color of menu text, some look dark grey some black.
