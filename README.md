@@ -25,3 +25,4 @@ TODO
 - Get rid of the white space on the restaurant pages cased by shifting the restaurant section up onto the image.
 - Review and delete as required the questions above
 - Look at replacing the checkboxes with a focs pseudo class.
+- Maybe add a left and right border to the extended desktop sections that are the same color. 

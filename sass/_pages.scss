@@ -50,6 +50,11 @@
 
 .section-how-it-works {
     background-color: white;
+
+    @include breakpoint-desktop {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+    }
     
     h1 {
         @include breakpoint-tablet {
