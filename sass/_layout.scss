@@ -37,13 +37,10 @@
 }
 
 .main {
+    @include max-width;
     .section {
         padding: 3em 1.5em 3.8em 1.5em;
     }
-}
-
-.content {
-    @include max-width;
 }
 
 .footer {
