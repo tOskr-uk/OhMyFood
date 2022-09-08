@@ -1,6 +1,4 @@
 QUESTIONS
-- Restaurant pages. body element is pushed up 40px leaving a gap at the bottom. Is there a better 
-  method to fill this gap than a negative margin?
 - MENU PAGES ANIMATION (Page 6): "...The visitor can add the dishes he wishes to his order by clicking on them...."
   Pseudo class focus only applies to 1 element at a time. Without JS or hidden checkbox i can only get this 
   animation to appear on a single menu item. This ok?
@@ -12,9 +10,10 @@ QUESTIONS
   their heights to better manage how they react to the animation when hovered or clicked. Are thes eimperfections acceptable 
   for the scope of this project? Or will i need to add the custom classes? This is for the menu cards (See 'The Enchanted Plate')
 - Consider leaving tablet breakpoint the same as mobile else too much of the menu text is hidden away. 
+- Assignment 2 instruction state: "48h before your filmed presentation, upload your final deliverable right below in order to share it with the assessor."
+
 
 
 
 TODO
-- Look at replacing the checkboxes with a focs pseudo class.
-- Check menus for french chars and add as required (found one on dessert section of restaurant_4).
+
