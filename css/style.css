@@ -216,8 +216,8 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .card-menu {
-    margin: 0 3px;
-    flex: 0 1 31%;
+    margin: 2% 0;
+    flex: 0 1 32%;
     margin-top: 0;
   }
 }
@@ -702,7 +702,7 @@ h1 {
   .restaurant__body .menu {
     display: flex;
     flex-flow: row wrap;
-    gap: 1em;
+    justify-content: space-between;
   }
 }
 .restaurant__body .menu__title {
@@ -715,6 +715,7 @@ h1 {
 @media screen and (min-width: 768px) {
   .restaurant__body .menu__title {
     width: 100%;
+    margin-bottom: 1em;
   }
 }
 .restaurant__body .menu__title::before {

@@ -186,8 +186,8 @@
     transition: all 0.2s;
 
     @include breakpoint-tablet {
-        margin: 0 3px;
-        flex: 0 1 31%;
+        margin: 2% 0;
+        flex: 0 1 32%;
         margin-top: 0;
     }
     

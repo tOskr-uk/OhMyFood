@@ -270,7 +270,8 @@
             @include breakpoint-tablet {
                 display: flex;
                 flex-flow: row wrap;
-                gap: 1em;
+                justify-content: space-between;
+                // gap: 1em;
             }
 
             &__title {
@@ -279,9 +280,10 @@
                 font-weight: 200;
                 position: relative;
                 padding: 1.5em 0 .5em 0;
-                
+                                
                 @include breakpoint-tablet {
                     width: 100%;
+                    margin-bottom: 1em;
                 }
 
                 &::before {
