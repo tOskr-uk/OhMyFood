@@ -46,6 +46,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  min-width: 360px;
 }
 
 h1 {
@@ -55,6 +56,7 @@ h1 {
 .btn {
   display: inline-block;
   color: white;
+  opacity: 1;
   text-decoration: none;
   padding: 0.9em 2em;
   font-size: 1.6rem;
@@ -68,7 +70,7 @@ h1 {
     font-size: 2.2rem;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .btn:hover {
     filter: brightness(1.08);
     transform: translateY(-4px);
@@ -83,13 +85,14 @@ h1 {
   box-shadow: 2px 2px 5px 2px #cecece;
   overflow: hidden;
   transition: all 0.2s;
+  opacity: 1;
 }
 @media screen and (min-width: 768px) {
   .card-rest {
     flex: 1 0 40%;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .card-rest {
     height: 22em;
   }
@@ -159,7 +162,7 @@ h1 {
 .card-rest__info div input[type=checkbox]:checked ~ i:last-child {
   opacity: 1;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .card-rest__info div input[type=checkbox]:hover ~ i:last-child {
     opacity: 1;
   }
@@ -276,7 +279,7 @@ h1 {
   visibility: visible;
   transform: translate(-50%, -50%) rotateZ(360deg);
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .card-menu:hover div:last-of-type {
     flex-basis: 4em;
   }
@@ -318,17 +321,14 @@ h1 {
 
 .header {
   box-shadow: 0 2px 5px 2px #aaa;
-  clip-path: inset(0 0 -7px 1px);
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   flex-flow: row nowrap;
+  position: relative;
   padding: 1.4em 0 0.8em 0;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .header {
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
@@ -337,7 +337,7 @@ h1 {
 .header .logo {
   text-align: center;
 }
-.header .nav i {
+.header .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -348,23 +348,22 @@ h1 {
   color: #333;
 }
 @media screen and (min-width: 768px) {
-  .header .nav i {
+  .header .nav {
     font-size: 3rem;
   }
 }
 
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 .main .section {
   padding: 3em 1.5em 3.8em 1.5em;
 }
 
-.footer .content {
+.footer {
+  height: 100%;
   background-color: #333;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+.footer .container {
   color: white;
   padding: 2em 1.7em;
   display: flex;
@@ -372,73 +371,81 @@ h1 {
   font-size: 1.6rem;
 }
 @media screen and (min-width: 768px) {
-  .footer .content {
+  .footer .container {
     flex-flow: row wrap;
     font-size: 2rem;
   }
 }
-.footer .content .logo {
+.footer .container .logo {
   width: 100%;
+  margin: 0.5em 0 0.75em 0;
 }
-.footer .content .logo img {
+.footer .container .logo img {
   filter: invert(100%);
   width: 7em;
 }
-.footer .content a {
+.footer .container a {
   display: block;
   margin: 0.6em 0 0 0;
   text-decoration: none;
   color: inherit;
 }
 @media screen and (min-width: 768px) {
-  .footer .content a {
+  .footer .container a {
     flex: 1 0 50%;
   }
 }
-.footer .content a:nth-of-type(1) {
+.footer .container a:nth-of-type(1) {
   order: 1;
 }
-.footer .content a:nth-of-type(2) {
+.footer .container a:nth-of-type(2) {
   order: 2;
 }
 @media screen and (min-width: 768px) {
-  .footer .content a:nth-of-type(2) {
+  .footer .container a:nth-of-type(2) {
     order: 3;
   }
 }
-.footer .content a:nth-of-type(3) {
+.footer .container a:nth-of-type(3) {
   order: 3;
 }
 @media screen and (min-width: 768px) {
-  .footer .content a:nth-of-type(3) {
+  .footer .container a:nth-of-type(3) {
     order: 2;
   }
 }
-.footer .content a:nth-of-type(4) {
+.footer .container a:nth-of-type(4) {
   order: 4;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
-  .footer .content a:nth-of-type(4) {
+  .footer .container a:nth-of-type(4) {
     margin-bottom: 0;
   }
 }
-.footer .content a i {
+.footer .container a i {
   font-size: 1.3rem;
   width: 2em;
 }
 
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 .section-location {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row nowrap;
   background-color: #cecece;
   padding: 1em 0;
   position: relative;
   z-index: -1;
   color: #333;
   font-size: 1.8rem;
+}
+.section-location .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
 }
 @media screen and (min-width: 768px) {
   .section-location {
@@ -483,7 +490,7 @@ h1 {
 .section-how-it-works {
   background-color: white;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .section-how-it-works {
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
@@ -505,7 +512,7 @@ h1 {
     justify-content: center;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .section-how-it-works ul {
     gap: 2.5em;
   }
@@ -546,7 +553,7 @@ h1 {
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .section-how-it-works ul li a {
     transition: all 0.2s;
   }
@@ -566,7 +573,7 @@ h1 {
     font-size: 3rem;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .section-how-it-works ul li a i {
     padding: 0 0.5em;
   }
@@ -593,7 +600,7 @@ h1 {
     width: 2em;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   .section-how-it-works ul li a::before {
     height: 2em;
     width: 2em;
@@ -611,7 +618,7 @@ h1 {
   background-color: #eeeeee;
 }
 @media screen and (min-width: 768px) {
-  .section-restaurants {
+  .section-restaurants .container {
     display: flex;
     flex-flow: row wrap;
     gap: 1.5em;
@@ -658,59 +665,73 @@ h1 {
   }
 }
 
-.restaurant__background {
+.body {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 13em;
   position: relative;
   z-index: 1;
 }
-.restaurant__background img {
-  max-height: 275px;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
-@media screen and (min-width: 768px) {
-  .restaurant__background {
-    object-position: 0 -10.5em;
+@media screen and (min-width: 1024px) {
+  .body {
+    background-size: cover;
   }
 }
-@media screen and (min-width: 992px) {
-  .restaurant__background {
-    object-position: 0 -15em;
-  }
+.body__bg--1 {
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
-.restaurant__body {
+.body__bg--2 {
+  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.body__bg--3 {
+  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+.body__bg--4 {
+  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+.body .content {
   background-color: #eeeeee;
   border-top-left-radius: 2.5em;
   border-top-right-radius: 2.5em;
-  transform: translateY(-2.7em);
-  margin-bottom: -2.7em;
   padding: 1.4em 1em 3.2em 1em;
-  position: relative;
-  z-index: 2;
 }
-.restaurant__body .name {
+@media screen and (min-width: 1024px) {
+  .body .content {
+    width: 1024px;
+    margin: 0 auto;
+    background-color: rgba(238, 238, 238, 0.9);
+    box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+}
+.body .content .name {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 2em 0 0;
 }
-.restaurant__body .name h1 {
-  font-family: Shrikhand, sans-serif;
+.body .content .name h1 {
+  font-family: "Shrikhand", sans-serif;
   letter-spacing: 0.5px;
-  font-weight: 600;
+  font-size: 2.4rem;
 }
-.restaurant__body .name i {
+@media screen and (min-width: 1024px) {
+  .body .content .name h1 {
+    font-size: 3rem;
+  }
+}
+.body .content .name i {
   font-size: 3rem;
   color: #666;
 }
 @media screen and (min-width: 768px) {
-  .restaurant__body .menu {
+  .body .content .menu {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
 }
-.restaurant__body .menu__title {
+.body .content .menu__title {
   text-transform: uppercase;
   color: #333;
   font-weight: 200;
@@ -718,12 +739,12 @@ h1 {
   padding: 1.5em 0 0.5em 0;
 }
 @media screen and (min-width: 768px) {
-  .restaurant__body .menu__title {
+  .body .content .menu__title {
     width: 100%;
     margin-bottom: 1em;
   }
 }
-.restaurant__body .menu__title::before {
+.body .content .menu__title::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -731,7 +752,7 @@ h1 {
   border-bottom: 3px solid #99E2D0;
   width: 2.4em;
 }
-.restaurant__body .btn {
+.body .btn {
   margin-top: 2em;
   padding-left: 5em;
   padding-right: 5em;

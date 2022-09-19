@@ -2,6 +2,7 @@
 .btn {
     display: inline-block;
     color: white;
+    opacity: 1;
     text-decoration: none;
     padding: .9em 2em;
     font-size: 1.6rem;
@@ -33,6 +34,7 @@
     @include box-shadow;
     overflow: hidden;
     transition: all 0.2s;
+    opacity: 1;
 
     @include breakpoint-tablet {
         flex: 1 0 40%;

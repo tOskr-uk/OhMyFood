@@ -1,10 +1,8 @@
 .header {
     @include box-shadow($x:0, $y:2px, $color:$color-grey);
-    clip-path: inset(0 0 -7px 1px);
-    @include max-width;
     @include flex-center;
-    position: relative;
     flex-flow: row nowrap;
+    position: relative;
     padding: 1.4em 0 .8em 0;
     
     @include breakpoint-desktop {
@@ -17,34 +15,34 @@
     }
 
     .nav {
-        i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 0;
-            z-index: 11;
-            padding: 20px;
-            font-size: 2rem;
-            color: $color-grey-darker;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 11;
+        padding: 20px;
+        font-size: 2rem;
+        color: $color-grey-darker;
 
-            @include breakpoint-tablet {
-                font-size: 3rem;
-            }
+        @include breakpoint-tablet {
+            font-size: 3rem;
         }
     }
 }
 
 .main {
-    @include max-width;
+    // @include max-width;
     .section {
         padding: 3em 1.5em 3.8em 1.5em;
     }
 }
 
 .footer {
-    .content {
-        background-color: $color-grey-darker;
-        @include max-width;
+    height: 100%;
+    background-color: $color-grey-darker;
+    position: relative;
+    z-index: 5;
+    .container {
         color: white;
         padding: 2em 1.7em;
         display: flex;
@@ -58,6 +56,8 @@
         
         .logo {
             width: 100%;
+            margin: .5em 0 .75em 0;
+            
             img {
                 filter: invert(100%);
                 width: 7em;
@@ -107,4 +107,8 @@
             }
         }
     }
+}
+
+.container{
+    @include max-width;
 }

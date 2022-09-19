@@ -12,13 +12,21 @@ $color-grey-darker: #333;
 $font-logo: 'Shrikhand', cursive;
 $font-text: 'Roboto', sans-serif;
 
-$max-width: 1200px;
+$min-width: 360px;
+
+
+
+// MAPS
+$breakpoints:(
+    desktop: 1024px,
+    tablet: 768px
+);
 
 
 
 // MIXINS
 @mixin max-width {
-    max-width: $max-width;
+    max-width: map-get($breakpoints, desktop);
     margin: 0 auto;
 }
 
@@ -43,14 +51,6 @@ $max-width: 1200px;
         @content;
     }
 }
-
-
-
-// MAPS
-$breakpoints:(
-    desktop: 992px,
-    tablet: 768px
-);
 
 
 

@@ -1,14 +1,16 @@
 // HOME PAGE
 .section-location {
-    @include flex-center;
-    flex-flow: row nowrap;
-
     background-color: $color-grey-light;
     padding: 1em 0;
     position: relative;
     z-index: -1;
     color: $color-grey-darker;
     font-size: 1.8rem;
+
+    .container {
+        @include flex-center;
+        flex-flow: row nowrap;
+    }
 
     @include breakpoint-tablet {
         font-size: 2.2rem;
@@ -170,11 +172,13 @@
 
 .section-restaurants {
     background-color: $color-grey-lighter;
-    // @include max-width;
-    @include breakpoint-tablet {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1.5em;
+
+    .container{
+        @include breakpoint-tablet {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 1.5em;
+        }
     }
 
     h1 {
@@ -223,37 +227,48 @@
 
 
 // RESTAURANTS PAGES
-.restaurant {
+
+.body {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 13em;
+    position: relative;
+    z-index: 1;
     
-    &__background {
-        position: relative;
-        z-index: 1;
-        img {
-            max-height: 275px;
-            object-fit: cover;
-            width: 100%;
-            height: auto;
-        }
-
-        @include breakpoint-tablet {
-            object-position: 0 -10.5em;
-        }
-
-        @include breakpoint-desktop {
-            object-position: 0 -15em;
-        }
+    @include breakpoint-desktop {
+        background-size: cover;
     }
     
-    &__body {
+    &__bg--1{
+        background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    };
+    
+    &__bg--2{
+        background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+    };
+    
+    &__bg--3{
+        background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    };
+    
+    &__bg--4{
+        background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+    };
+    
+    .content {
         background-color: $color-grey-lighter;
         border-top-left-radius: 2.5em;
         border-top-right-radius: 2.5em;
-        transform: translateY(-2.7em);
-        margin-bottom: -2.7em;
         padding: 1.4em 1em 3.2em 1em;
-        position: relative;
-        z-index: 2;
-        
+
+        @include breakpoint-desktop {
+            width: map-get($breakpoints, desktop);
+            margin: 0 auto;
+            background-color: rgba($color-grey-lighter, .9);
+            box-shadow: 4px 4px 10px 5px rgba(0,0,0,0.5);
+        }
+
         .name {
             display: flex;
             justify-content: space-between;            
@@ -261,23 +276,26 @@
             padding: 1em 2em 0 0;
 
             h1 {
-                font-family: Shrikhand, sans-serif;
+                font-family: 'Shrikhand', sans-serif;
                 letter-spacing: 0.5px;
-                font-weight: 600;
+                font-size: 2.4rem;
+
+                @include breakpoint-desktop {
+                    font-size: 3rem;
+                }
             }
             
             i {
                 font-size: 3rem;
                 color: $color-grey-dark
             }
-        }   
-        
-        .menu {   
+        }
+
+        .menu {
             @include breakpoint-tablet {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
-                // gap: 1em;
             }
 
             &__title {
@@ -300,17 +318,45 @@
                     border-bottom: 3px solid $color-tertiary;
                     width: 2.4em;
                 }
-
             }
-        } 
-        
-        .btn {
-            margin-top: 2em;
-            padding-left: 5em;
-            padding-right: 5em;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
         }
+
+        // @include breakpoint-desktop {
+        //     height: 100%;
+        // }
+
+        // position: relative;
+        // z-index: 1;
+        // img {
+        //     max-height: 275px;
+        //     object-fit: cover;
+        //     width: 100%;
+        //     height: auto;
+
+        //     @include breakpoint-desktop {
+        //         max-height: none;
+        //         // height: 100%;
+        //     }
+            
+        // }
+
+        // @include breakpoint-tablet {
+        //     object-position: 0 -10.5em;
+        // }
+
+        // @include breakpoint-desktop {
+        //     object-position: 0 -15em;
+        // }
+    }       
+
+
+
+    .btn {
+        margin-top: 2em;
+        padding-left: 5em;
+        padding-right: 5em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
